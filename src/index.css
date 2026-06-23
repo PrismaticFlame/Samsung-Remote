@@ -273,3 +273,75 @@ button:active {
   font-size: 9px;
   letter-spacing: 0.06em;
 }
+
+/* YouTube input */
+.yt-input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.yt-input-row {
+  display: flex;
+  gap: 6px;
+}
+
+.yt-input {
+  flex: 1;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 11px;
+  padding: 7px 10px;
+  outline: none;
+  transition: border-color 0.1s ease;
+}
+
+.yt-input::placeholder {
+  color: var(--text-dim);
+}
+
+.yt-input:focus {
+  border-color: var(--accent);
+}
+
+.yt-input--error {
+  border-color: #ff4444;
+}
+
+.yt-launch-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--text-primary);
+}
+
+.yt-launch-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent-bright);
+}
+
+.yt-launch-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.yt-error {
+  font-size: 9px;
+  color: #ff4444;
+  margin-top: 4px;
+  letter-spacing: 0.05em;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.yt-spinner {
+  animation: spin 1s linear infinite;
+}

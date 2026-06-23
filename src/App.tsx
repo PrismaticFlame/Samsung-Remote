@@ -2,6 +2,7 @@ import DPad from "./components/DPad";
 import VolumeControls from './components/VolumeControls';
 import AppShortcuts from './components/AppShortcuts';
 import { sendKey, sendCommand } from './components/DPad';
+import YouTubeInput from './components/YouTubeInput';
 import './index.css';
 
 export default function App() {
@@ -59,6 +60,10 @@ export default function App() {
       <div className="divider" />
 
       <DPad />
+
+      <div className="divider" />
+
+      <YouTubeInput />
 
       <div className="divider" />
 
