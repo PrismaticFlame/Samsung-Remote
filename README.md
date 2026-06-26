@@ -19,7 +19,7 @@ Create a `.env` file in root and follow the example of `.env.example` but leave 
 Assuming you have your TV's IP Address set to a specific, static address, you can set that address there. For example:
 
 ```
-VITE_TV_HOST=10.0.0.1
+VITE_TV_HOST=1.0.0.1
 ```
 (That is not a real TV Address)
 
