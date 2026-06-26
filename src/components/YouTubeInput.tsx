@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { sendCommand } from './DPad';
 
 function extractVideoId(input: string): string | null {
     // Full URL: https://www.youtube.com/watch?v=VIDEO_ID
@@ -29,10 +28,22 @@ export default function YouTubeInput() {
         }
 
         setStatus('sending');
-        const url = `https://www.youtube.com/watch?v=${id}`;
-        await sendCommand('open-browser', [url]);
+        try {
+            const host = import.meta.env.VITE_TV_HOST;
+            const res = await fetch(`http://${host}:8001/api/v2/applications/111299001912`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ ContentId: id }),
+            });
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            setValue('');
+        } catch (e) {
+            console.error('YouTube launch failed:', e);
+            setStatus('error');
+            setTimeout(() => setStatus('idle'), 2000);
+            return;
+        }
         setStatus('idle');
-        setValue('');
     }
 
     function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
