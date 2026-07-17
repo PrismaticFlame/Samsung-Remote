@@ -44,6 +44,11 @@ const APPS: App[] = [
     icon: <img src="/icons/spotify.svg" alt="Spotify" width={24} height={24}/>,
   },
   {
+    label: 'Tubi',
+    id: '3201504001965',
+    icon: <img src="/icons/tubi.svg" alt="Tubi" width={24} height={24}/>,
+  },
+  {
     label: 'Plex',
     id: '3201512006963',
     icon: <img src="/icons/plex.svg" alt="Plex" width={24} height={24}/>,

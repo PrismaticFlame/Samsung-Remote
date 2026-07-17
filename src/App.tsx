@@ -10,7 +10,7 @@ export default function App() {
     <div className="remote">
       {/* Header */}
       <div className="remote-header">
-        <span className="remote-brand">SAMSUNG</span>
+        <span className="remote-brand">SAMSUNG (not official)</span>
         <button
           className="power-btn"
           onClick={() => sendKey('KEY_POWER')}
